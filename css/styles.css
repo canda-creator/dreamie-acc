@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
+
+:root {
+    --fondo: #FFFFFF;
+    --color-texto: #000000;
+    --color-hover: #FFC3DA;
+    --fuente-principal: "Poppins", sans-serif;
+    --fuente-secundaria: "Comfortaa", sans-serif;
+    --fuente-terciaria: "Baloo 2", sans-serif;
+}
+
+* {cursor: url(https://cur.cursors-4u.net/anime/ani-10/ani977.ani), url(https://cur.cursors-4u.net/anime/ani-10/ani977.png), auto !important;}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+    background-color:var(--fondo);
+    
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: var(--fondo);
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav__link i {
+  margin-right: 6px;
+  font-size: 18px;
+  color: var(--color-texto);
+  transition: color 0.3s ease;
+}
+
+.nav__link:hover i {
+  color: var(--color-hover);
+}
+
+.logo{
+    width: 100px;
+}
+
+.nav__list{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+}
+
+.nav__item{
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-family: var(--fuente-terciaria);
+}
+
+.nav__link{
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 700;
+    font-size: smaller;
+}
+
+.nav__link:hover {
+    color: var(--color-hover)
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.hamburguer {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.hamburguer span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-texto);
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        padding: 10px 20px;
+    }
+    
+    .hamburguer {
+        display: flex;
+        order: 2;
+    }
+
+    .nav__list {
+    flex-direction: column;
+    gap: 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    width: 100%;
+    order: 3;
+    padding: 0 10px;
+    background-color: var(--fondo);
+    }
+
+    #menu-toggle:checked ~ .nav__list {
+        max-height: 500px;
+    }
+}
+
+.nav__item--dropdown {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--fondo);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 10px 0;
+  display: none;
+  flex-direction: column;
+  min-width: 180px;
+  z-index: 99;
+}
+
+.dropdown__link {
+  padding: 10px 20px;
+  display: block;
+  color: var(--color-texto);
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.dropdown__link:hover {
+  background-color: #f0f0f0;
+  color: #FFC3DA;
+}
+
+.nav__item--dropdown:hover .dropdown {
+  display: flex;
+}
+
+main {
+  padding-top: 120px;
+}
+
+.glitter__fija {
+  float: right;
+  position: fixed;
+  right: 0px;
+  bottom: 20px;
+  z-index: 9999;
+}
+
+.gif__mymelody{
+    width:100%;
+    height: auto;
+}
+
+.texto{
+    text-align: center;
+    padding: 30px 0;
+    background-color: #fff5fa;
+}
+
+.texto__titulo{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.texto__titulo:hover{
+  color: #f9d1e4;
+
+}
+.texto__subtitulo {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+@media (max-width: 480px) {
+  .texto__titulo {
+    font-size: 18px;  
+  }
+
+  .texto__subtitulo{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 320px) {
+  .texto__titulo{
+    font-size: 15px;
+  }
+
+  .texto__subtitulo{
+    font-size: 13px;
+  }
+}
+
+.seccion-mensaje {
+  background-color: #fff0f8; /* Un rosita suave, similar al de .seccion-info */
+  text-align: center;
+}
+
+.info-mensaje{
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.mensaje__descripcion{
+    font-family: "Comfortaa", sans-serif;
+    margin-top: 20px;
+}
+
+.mensaje__cta {
+    font-family: "Comfortaa", sans-serif;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.mensaje__btn {
+    padding: 10px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    width: 188px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    background-color: #f9d1e4;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .mensaje__btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+.mensaje__btn:hover {
+  background-color: #ffffff;
+  color:  #f9d1e4;
+  border: none;
+}
+
+.mensaje__btn:focus {
+  outline: 2px solid #f9d1e4;
+  outline-offset: 2px;
+}
+
+.seccion-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px 40px;
+  background-color: #fff5fa;
+  flex-wrap: wrap;
+}
+
+.info-imagen img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.info-texto {
+  max-width: 500px;
+}
+
+.info-texto h2 {
+  font-size: 36px;
+  font-family: "Poppins", sans-serif;
+  color: #e3b4ba;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.info-texto p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  font-family: "Comfortaa", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .seccion-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info-texto h2 {
+    font-size: 28px;
+  }
+
+  .info-texto p {
+    font-size: 16px;
+  }
+}
+
+.horarios-atencion {
+  background-color: #fff7f8;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.contenedor-imagen img {
+  width: 200px;
+  border-radius: 8px;
+}
+
+.contenedor-texto h3{
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .horarios-atencion {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contenedor-imagen img {
+    max-width: 100%;
+  }
+}
+
+.footer {
+  background-color:#fee9ee;
+  font-family: "Comfortaa", sans-serif;
+}
+
+.fa-brands {
+  font-size: 24px;
+  color: #000000;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.fa-brands:hover {
+  color:  #ffbbd5;
+}
+
+.footer-menu-link {
+  text-decoration: none;
+  color:  #000000;
+  font-weight: 600;
+}
+
+.footer-menu-link:hover {
+  color:  #FFC3DA;
+}
+.footer-email {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 14px;
+  color: #555;
+}
+
+.email{
+    text-decoration: none;
+    color:  rgba(0, 0, 0, 0.467);
+} 
